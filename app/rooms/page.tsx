@@ -2,8 +2,8 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
 import room1 from '@/public/room_1.jpg'
-import room2 from '@/public/room_2.jpg'
-import room3 from '@/public/room_3.jpg'
+import room2 from '@/public/room.jpg'
+import room3 from '@/public/one.jpg'
 import Link from "next/link"
 
 const rooms = [
