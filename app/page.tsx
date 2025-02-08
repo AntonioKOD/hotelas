@@ -8,7 +8,7 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import logo from '@/public/logo-inverse-246x110.png'
 import { ContactForm } from "@/components/contact-form"
-import bgImage from '@/public/bg-bunner-2.jpeg'
+import bgImage from '@/public/background.jpeg'
 
 export default function Home() {
   const containerRef = useRef(null)
