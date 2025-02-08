@@ -32,7 +32,7 @@ export function Navigation() {
             <Image src={logo} alt="Hotel Asbak" width={123} height={55} />
           </Link>
           <div className="hidden md:flex items-center space-x-8">
-            {["Rooms", "Dining", "Spa", "Experiences"].map((item) => (
+            {["Rooms"].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase()}`}
@@ -42,7 +42,7 @@ export function Navigation() {
               </Link>
             ))}
             <Link
-              href="/book"
+              href="/#contact"
               className="text-white border border-white/20 px-6 py-2 hover:bg-white hover:text-black transition-colors text-sm tracking-wider"
             >
               Book Now
@@ -70,7 +70,7 @@ export function Navigation() {
                 className="text-center"
               >
                 <ul className="space-y-8">
-                  {["Rooms", "Dining", "Spa", "Experiences", "Book Now"].map((item) => (
+                  {["Rooms"].map((item) => (
                     <li key={item}>
                       <Link
                         href={`/${item.toLowerCase().replace(" ", "-")}`}
@@ -81,6 +81,15 @@ export function Navigation() {
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <Link
+                      href="/#contact"
+                      className="text-white text-3xl font-light tracking-wider hover:text-gray-400 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Book Now
+                    </Link>
+                  </li>
                 </ul>
               </motion.div>
             </div>

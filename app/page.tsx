@@ -9,6 +9,10 @@ import { Button } from "@/components/ui/button"
 import logo from '@/public/logo-inverse-246x110.png'
 import { ContactForm } from "@/components/contact-form"
 import bgImage from '@/public/background.jpeg'
+import beach from '@/public/beach.jpg'
+import room from '@/public/room_1.jpg'
+import rana from '@/public/rana_hedhun (1).jpg'
+import hotel from '@/public/IMG_0726.jpg'
 
 export default function Home() {
   const containerRef = useRef(null)
@@ -52,6 +56,7 @@ export default function Home() {
               className="flex flex-col items-center gap-8"
             >
               <p className="text-xl font-light tracking-widest uppercase">Discover Comfort and Adventure at As Hotel Baks-Rrjoll - Where Every Stay is Unforgettable!</p>
+              <Link href={"#contact"}>
               <Button
                 size="lg"
                 variant="outline"
@@ -59,6 +64,7 @@ export default function Home() {
               >
                 Book Your Stay
               </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -90,7 +96,7 @@ export default function Home() {
             </div>
             <div className="relative h-[600px] group">
               <Image
-                src="/placeholder.svg?height=600&width=400"
+                src={rana}
                 alt="Luxury suite interior"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -114,9 +120,9 @@ export default function Home() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Rooms & Suites", image: "/placeholder.svg?height=800&width=600", link: "/rooms" },
-              { title: "Fine Dining", image: "/placeholder.svg?height=800&width=600", link: "/dining" },
-              { title: "Wellness", image: "/placeholder.svg?height=800&width=600", link: "/spa" },
+              { title: "Rooms & Suites", image: room, link: "/rooms" },
+              { title: "Cafe & Bar", image: hotel, link: "/" },
+              { title: "Nature", image: beach, link: "/" },
             ].map((item, index) => (
               <Link href={item.link} key={item.title}>
                 <motion.div
@@ -144,42 +150,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="py-32 px-4 bg-neutral-100">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-16 items-center"
-          >
-            <div className="space-y-8">
-              <h2 className="text-5xl font-light">Your Journey Begins Here</h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                Book your stay directly with us to enjoy exclusive benefits and preferential rates.
-              </p>
-              <div className="space-y-4">
-                <Button size="lg" className="w-full sm:w-auto">
-                  Book Now
-                </Button>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  View Special Offers
-                </Button>
-              </div>
-            </div>
-            <div className="relative h-[400px]">
-              <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Hotel amenities"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <div id="contact">
         <ContactForm/>
+        </div>
     </main>
   )
 }

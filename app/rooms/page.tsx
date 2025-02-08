@@ -1,34 +1,32 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Navigation } from "@/components/navigation"
+import room1 from '@/public/room_1.jpg'
+import room2 from '@/public/room_2.jpg'
+import room3 from '@/public/room_3.jpg'
+import Link from "next/link"
 
 const rooms = [
   {
     id: 1,
-    name: "Deluxe Suite",
-    description: "Spacious suite with panoramic city views",
-    price: "€450",
-    size: "55m²",
-    amenities: ["King bed", "City view", "Rainfall shower", "Mini bar"],
-    image: "/placeholder.svg?height=600&width=800",
+    name: "1 Bedroom Suite",
+    description: "Perfect for families and groups, our 1-Bedroom Suite comfortably accommodates up to 6 guests and offers everything you need for a relaxing stay.",
+    amenities: ["Queen Bed", "2 Bunk Beds", "2 Sofa Beds", "Wi-Fi", "Private Laundry", "Private Bathroom"],
+    image: room1,
   },
   {
     id: 2,
-    name: "Presidential Suite",
-    description: "Ultimate luxury with separate living areas",
-    price: "€850",
-    size: "120m²",
-    amenities: ["King bed", "Ocean view", "Private terrace", "Butler service"],
-    image: "/placeholder.svg?height=600&width=800",
+    name: "Family Suite",
+    description: "Designed for families and groups up to 4, our Family Suite offers a cozy and functional space to relax and unwind.",
+    amenities: ["Queen Bed", "Essential Kitchenette", "Dining Space", "Wi-Fi", "2 Bunk Beds", "Private Bathroom"],
+    image: room2,
   },
   {
     id: 3,
-    name: "Garden Villa",
-    description: "Private villa with direct garden access",
-    price: "€650",
-    size: "85m²",
-    amenities: ["King bed", "Private garden", "Plunge pool", "Outdoor dining"],
-    image: "/placeholder.svg?height=600&width=800",
+    name: "Family Suite with Kitchen – Cozy & Fully Equipped",
+    description: "Perfect for small families or groups, our inviting Family Suite comfortably accommodates up to three guests. Enjoy a bright, airy space complete with cozy bedding, modern amenities, and thoughtful touches designed to ensure a relaxing, memorable stay.",
+    amenities: ["2 Twin Beds", "Sofa Bed", "Dining Area", "Air Conditioning", "Wi-Fi", "Private Bathroom"],
+    image: room3,
   },
 ]
 
@@ -55,9 +53,6 @@ export default function RoomsPage() {
                   <h2 className="text-3xl font-light">{room.name}</h2>
                   <p className="text-gray-600">{room.description}</p>
                   <div className="flex items-center gap-4 text-sm text-gray-500">
-                    <span>{room.size}</span>
-                    <span>•</span>
-                    <span>From {room.price} per night</span>
                   </div>
                   <ul className="grid grid-cols-2 gap-2 text-sm text-gray-600">
                     {room.amenities.map((amenity) => (
@@ -65,7 +60,7 @@ export default function RoomsPage() {
                     ))}
                   </ul>
                   <div className="pt-4">
-                    <Button>Book Now</Button>
+                    <Link href='/#contact'><Button>Book Now</Button></Link>
                   </div>
                 </div>
               </div>
